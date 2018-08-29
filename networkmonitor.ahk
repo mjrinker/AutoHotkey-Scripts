@@ -4,6 +4,7 @@
 ; file.Write("")
 ; file.Close()
 
+monitorInterval := 1000
 minuteTimer := 0
 minThreshold := 5
 upThreshold := 10
@@ -34,7 +35,7 @@ Loop, % DecodeInteger(&tb)
 If !ptr
    ExitApp
 
-SetTimer, NetMeter, On, 1000
+SetTimer, NetMeter, On, %monitorInterval%
 Return
 
 NetMeter:
