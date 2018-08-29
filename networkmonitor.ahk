@@ -10,6 +10,7 @@ upThreshold := 10
 dnThreshold :=10
 measure := "up"
 blip := 0
+logging := True
 
 Gui, -Caption +Border +AlwaysOnTop +ToolWindow
 Gui, Color, EEAA99
@@ -79,7 +80,9 @@ Else If (measure = "dn") {
 	}
 }
 
-FileAppend, `n%A_Now%`t%upRate%Kb/s`t%minuteTimer%s`t%A_TimeIdlePhysical%ms, networkmonitor.txt
+If (logging) {
+	FileAppend, `n%A_Now%`t%upRate%Kb/s`t%minuteTimer%s`t%A_TimeIdlePhysical%ms, networkmonitor.txt
+}
 
 If ((minuteTimer/60) > minThreshold) {
 	if (A_TimeIdlePhysical > 1800000){
