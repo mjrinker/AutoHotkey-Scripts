@@ -1,17 +1,17 @@
 #SingleInstance, Force
 
-; file := FileOpen("networkmonitor.txt", "w")
-; file.Write("")
-; file.Close()
+monitorInterval := 1000  ; The amount of time in milliseconds to wait between iterations
+idleTime := 30  ; The amount of time in minutes for the computer to be idle before sleeping
+minThreshold := 5  ; The amount of minutes to stay awake on low network activity
+upThreshold := 10  ; The threshold for upload in Kbps
+dnThreshold := 10  ; The threshold for download in Kbps
+measure := "up"  ; The direction to monitor ("up" upload vs. "dn" download)
+blip := 0  ; A network blip
+blipLength := 1  ; Length of a blip in seconds
+logging := True  ; Log activity to file
 
-monitorInterval := 1000
+; The timer the counts up each time the loop runs and encounters low activity (do not change)
 minuteTimer := 0
-minThreshold := 5
-upThreshold := 10
-dnThreshold :=10
-measure := "up"
-blip := 0
-logging := True
 
 Gui, -Caption +Border +AlwaysOnTop +ToolWindow
 Gui, Color, EEAA99
@@ -58,8 +58,9 @@ If (measure = "up") {
 	}
 	Else {
 		++blip
-		if (blip > 2) {
+		if (blip > blipLength+1) {
 			minuteTimer := 0
+			blip := 0
 		}
 		else {
 			minuteTimer += 1
@@ -72,8 +73,9 @@ Else If (measure = "dn") {
 	}
 	Else {
 		++blip
-		if (blip > 2) {
+		if (blip > blipLength+1) {
 			minuteTimer := 0
+			blip := 0
 		}
 		else {
 			minuteTimer += 1
@@ -86,7 +88,7 @@ If (logging) {
 }
 
 If ((minuteTimer/60) > minThreshold) {
-	if (A_TimeIdlePhysical > 1800000){
+	if (A_TimeIdlePhysical > (idleTime*60000)){
 		;FileAppend, `n%A_Now%`tSleeping..., networkmonitor.txt
 		minuteTimer := 0
 		Run, sleep.ahk
