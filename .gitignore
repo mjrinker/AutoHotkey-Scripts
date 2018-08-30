@@ -1,0 +1,10 @@
+AutoGUI/
+FunctionKeys/
+IPAKey/
+Pranks/
+TF-master/
+*.bat
+*.vbs
+*.exe
+*.txt
+tf.ahk
