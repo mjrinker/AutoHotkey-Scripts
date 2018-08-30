@@ -1,0 +1,6 @@
+[autorun]
+Icon=favicon.ico
+Label=MouseJigglerV1
+;Open=MouseJiggler.exe
+ShellExecute=MouseJiggler.exe
+UseAutoPlay=1

@@ -1,0 +1,5 @@
+onWake.ahk
+ClearClip.ahk
+power.ahk
+IPAKey/ipa_on_off.ahk
+networkmonitor.ahk

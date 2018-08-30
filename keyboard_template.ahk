@@ -1,0 +1,346 @@
+#NoEnv  ; Recommended for performance and compatibility with future AutoHotkey releases.
+; #Warn  ; Enable warnings to assist with detecting common errors.
+SendMode Input  ; Recommended for new scripts due to its superior speed and reliability.
+SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
+#SingleInstance force
+#MaxHotkeysPerInterval 300
+
+$a::
+	SendInput 
+Return
+$b::
+	SendInput 
+Return
+$c::
+	SendInput 
+Return
+$d::
+	SendInput 
+Return
+$e::
+	SendInput 
+Return
+$f::
+	SendInput 
+Return
+$g::
+	SendInput 
+Return
+$h::
+	SendInput 
+Return
+$i::
+	SendInput 
+Return
+$j::
+	SendInput 
+Return
+$k::
+	SendInput 
+Return
+$l::
+	SendInput 
+Return
+$m::
+	SendInput 
+Return
+$n::
+	SendInput 
+Return
+$o::
+	SendInput 
+Return
+$p::
+	SendInput 
+Return
+$q::
+	SendInput 
+Return
+$r::
+	SendInput 
+Return
+$s::
+	SendInput 
+Return
+$t::
+	SendInput 
+Return
+$u::
+	SendInput 
+Return
+$v::
+	SendInput 
+Return
+$w::
+	SendInput 
+Return
+$x::
+	SendInput 
+Return
+$y::
+	SendInput 
+Return
+$z::
+	SendInput 
+Return
+$+A::
+	SendInput 
+Return
+$+B::
+	SendInput 
+Return
+$+C::
+	SendInput 
+Return
+$+D::
+	SendInput 
+Return
+$+E::
+	SendInput 
+Return
+$+F::
+	SendInput 
+Return
+$+G::
+	SendInput 
+Return
+$+H::
+	SendInput 
+Return
+$+I::
+	SendInput 
+Return
+$+J::
+	SendInput 
+Return
+$+K::
+	SendInput 
+Return
+$+L::
+	SendInput 
+Return
+$+M::
+	SendInput 
+Return
+$+N::
+	SendInput 
+Return
+$+O::
+	SendInput 
+Return
+$+P::
+	SendInput 
+Return
+$+Q::
+	SendInput 
+Return
+$+R::
+	SendInput 
+Return
+$+S::
+	SendInput 
+Return
+$+T::
+	SendInput 
+Return
+$+U::
+	SendInput 
+Return
+$+V::
+	SendInput 
+Return
+$+W::
+	SendInput 
+Return
+$+X::
+	SendInput 
+Return
+$+Y::
+	SendInput 
+Return
+$+Z::
+	SendInput 
+Return
+$0::
+	SendInput 
+Return
+$1::
+	SendInput 
+Return
+$2::
+	SendInput 
+Return
+$3::
+	SendInput 
+Return
+$4::
+	SendInput 
+Return
+$5::
+	SendInput 
+Return
+$6::
+	SendInput 
+Return
+$7::
+	SendInput 
+Return
+$8::
+	SendInput 
+Return
+$9::
+	SendInput 
+Return
+$Numpad0::
+	SendInput 
+Return
+$Numpad1::
+	SendInput 
+Return
+$Numpad2::
+	SendInput 
+Return
+$Numpad3::
+	SendInput 
+Return
+$Numpad4::
+	SendInput 
+Return
+$Numpad5::
+	SendInput 
+Return
+$Numpad6::
+	SendInput 
+Return
+$Numpad7::
+	SendInput 
+Return
+$Numpad8::
+	SendInput 
+Return
+$Numpad9::
+	SendInput 
+Return
+$NumpadEnter::
+	SendInput 
+Return
+$NumpadSub::
+	SendInput 
+Return
+$NumpadAdd::
+	SendInput 
+Return
+$NumpadDiv::
+	SendInput 
+Return
+$NumpadMult::
+	SendInput 
+Return
+$NumpadDot::
+	SendInput 
+Return
+$`::
+	SendInput 
+Return
+$-::
+	SendInput 
+Return
+$=::
+	SendInput 
+Return
+$[::
+	SendInput 
+Return
+$]::
+	SendInput 
+Return
+$\::
+	SendInput 
+Return
+$;::
+	SendInput 
+Return
+$'::
+	SendInput 
+Return
+$,::
+	SendInput 
+Return
+$.::
+	SendInput 
+Return
+$/::
+	SendInput 
+Return
+$~::
+	SendInput 
+Return
+$!::
+	SendInput 
+Return
+$@::
+	SendInput 
+Return
+$#::
+	SendInput 
+Return
+$$::
+	SendInput 
+Return
+$%::
+	SendInput 
+Return
+$^::
+	SendInput 
+Return
+$&::
+	SendInput 
+Return
+$*::
+	SendInput 
+Return
+$(::
+	SendInput 
+Return
+$)::
+	SendInput 
+Return
+$_::
+	SendInput 
+Return
+$+::
+	SendInput 
+Return
+${::
+	SendInput 
+Return
+$}::
+	SendInput 
+Return
+$|::
+	SendInput 
+Return
+$+;::
+	SendInput 
+Return
+$"::
+	SendInput 
+Return
+$<::
+	SendInput 
+Return
+$>::
+	SendInput 
+Return
+$?::
+	SendInput 
+Return
+$Tab::
+	SendInput 
+Return
+$Space::
+	SendInput 
+Return
+$Enter::
+	SendInput 
+Return
