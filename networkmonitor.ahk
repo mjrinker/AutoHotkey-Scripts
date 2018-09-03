@@ -84,12 +84,12 @@ Else If (measure = "dn") {
 }
 
 If (logging) {
-	FileAppend, `n%A_Now%`t%upRate%Kb/s`t%minuteTimer%s`t%A_TimeIdlePhysical%ms, networkmonitor.txt
+	FileAppend, `n%A_Now%`t%upRate%Kb/s`t%minuteTimer%s`t%A_TimeIdlePhysical%ms, networkmonitor_log\networkmonitor%A_YYYY%%A_MM%%A_DD%.txt
 }
 
 If ((minuteTimer/60) > minThreshold) {
 	if (A_TimeIdlePhysical > (idleTime*60000)){
-		;FileAppend, `n%A_Now%`tSleeping..., networkmonitor.txt
+		;FileAppend, `n%A_Now%`tSleeping..., networkmonitor_log\networkmonitor%A_YYYY%%A_MM%%A_DD%.txt
 		minuteTimer := 0
 		Run, sleep.ahk
 		;PwrState("sleep")
