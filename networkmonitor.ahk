@@ -1,5 +1,6 @@
 #SingleInstance, Force
 
+; User Configurable Options
 monitorInterval := 1000  ; The amount of time in milliseconds to wait between iterations
 idleTime := 30  ; The amount of time in minutes for the computer to be idle before sleeping
 minThreshold := 5  ; The amount of minutes to stay awake on low network activity
@@ -9,9 +10,11 @@ measure := "up"  ; The direction to monitor ("up" upload vs. "dn" download)
 blip := 0  ; A network blip
 blipLength := 1  ; Length of a blip in seconds
 logging := True  ; Log activity to file
+showGui := False  ; Display the network meter GUI
 
-; The timer the counts up each time the loop runs and encounters low activity (do not change)
+; DO NOT CHANGE: The timer the counts up each time the loop runs and encounters low activity
 minuteTimer := 0
+prevTime := A_Now
 
 Gui, -Caption +Border +AlwaysOnTop +ToolWindow
 Gui, Color, EEAA99
@@ -19,7 +22,20 @@ Gui, +LastFound
 WinSet, TransColor, EEAA99
 Gui, Add, Progress,      w10 h100 cGreen -0x1 Vertical vDn
 Gui, Add, Progress, y+10 w10 h100 cRed   -0x1 Vertical vUp
-; Gui, Show, x3 y400 , NetMeter                  ; Adjust X & Y to suit your screen res
+
+If showGui {
+	Gui, Show, x3 y400 , NetMeter  ; Adjust X & Y to suit your screen res
+}
+
+^+g::
+	showGui := !showGui
+	If showGui {
+		Gui, Show, x3 y400 , NetMeter  ; Adjust X & Y to suit your screen res
+	}
+	Else {
+		Gui, Show, Hide
+	}
+return
 
 If GetIfTable(tb)
    ExitApp
@@ -54,31 +70,33 @@ GuiControl,, Up, %upRate%
 
 If (measure = "up") {
 	If (upRate < upThreshold) {
-		minuteTimer += 1
+		minuteTimer := (A_Now - prevTime)
 	}
 	Else {
 		++blip
 		if (blip > blipLength+1) {
 			minuteTimer := 0
 			blip := 0
+			prevTime := A_Now
 		}
 		else {
-			minuteTimer += 1
+			minuteTimer := (A_Now - prevTime)
 		}
 	}
 }
 Else If (measure = "dn") {
 	If (dnRate < dnThreshold) {
-		minuteTimer += 1
+		minuteTimer := (A_Now - prevTime)
 	}
 	Else {
 		++blip
 		if (blip > blipLength+1) {
 			minuteTimer := 0
 			blip := 0
+			prevTime := A_Now
 		}
 		else {
-			minuteTimer += 1
+			minuteTimer := (A_Now - prevTime)
 		}
 	}
 }
